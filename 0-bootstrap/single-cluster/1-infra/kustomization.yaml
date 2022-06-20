@@ -1,7 +1,7 @@
 resources:
 #- argocd/consolelink.yaml
-#- argocd/consolenotification.yaml
-#- argocd/namespace-ibm-common-services.yaml
+- argocd/consolenotification.yaml
+- argocd/namespace-ibm-common-services.yaml
 #- argocd/namespace-ci.yaml
 #- argocd/namespace-dev.yaml
 #- argocd/namespace-staging.yaml
@@ -10,13 +10,13 @@ resources:
 #- argocd/namespace-istio-system.yaml
 #- argocd/namespace-openldap.yaml
 #- argocd/namespace-sealed-secrets.yaml
-#- argocd/namespace-tools.yaml
+- argocd/namespace-tools.yaml
 #- argocd/namespace-instana-agent.yaml
 #- argocd/namespace-robot-shop.yaml
-#- argocd/namespace-openshift-serverless.yaml
-#- argocd/namespace-knative-eventing.yaml
-#- argocd/namespace-knative-serving.yaml
-#- argocd/namespace-knative-serving-ingress.yaml
+- argocd/namespace-openshift-serverless.yaml
+- argocd/namespace-knative-eventing.yaml
+- argocd/namespace-knative-serving.yaml
+- argocd/namespace-knative-serving-ingress.yaml
 #- argocd/namespace-openshift-storage.yaml
 #- argocd/namespace-spp.yaml
 #- argocd/namespace-spp-velero.yaml
@@ -44,7 +44,7 @@ patches:
   patch: |-
     - op: add
       path: /spec/source/repoURL
-      value: ${GIT_BASEURL}/${GIT_ORG}/${GIT_GITOPS_INFRA}
+      value: https://github.com/cp4s-tim1/multi-tenancy-gitops-infra.git
     - op: add
       path: /spec/source/targetRevision
-      value: ${GIT_GITOPS_INFRA_BRANCH}
+      value: master
